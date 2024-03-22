@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReadingController;
+use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Routing\RouteUri;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+
+//?rotta get per inserimento del titolo book
+ 
+Route::get('/reading/create', [ReadingController::class, 'create'])->name('reading.create');
+
+
+//?rotta post per inserimento dei dati nel form database
+
+Route::post('/reading/store', [ReadingController::class, 'store'])->name('reading.store');
