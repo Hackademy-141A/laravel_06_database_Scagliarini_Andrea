@@ -27,3 +27,7 @@ Route::get('/reading/create', [ReadingController::class, 'create'])->name('readi
 //?rotta post per inserimento dei dati nel form database
 
 Route::post('/reading/store', [ReadingController::class, 'store'])->name('reading.store');
+
+//?rotta per vedere i titoli
+
+Route::get('/reading/index', [ReadingController::class, 'index']);

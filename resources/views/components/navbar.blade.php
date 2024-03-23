@@ -10,7 +10,10 @@
             <a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Inserisci un titolo</a>
+            <a class="nav-link" href="{{route('reading.create')}}">Inserisci un titolo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('reading.index')}}">Tutti i nostri libri</a>
           </li>
           {{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
