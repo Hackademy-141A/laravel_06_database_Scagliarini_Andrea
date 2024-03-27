@@ -14,5 +14,6 @@ class Reading extends Model
         'autor',
         'editor',
         'year',
+        'img',
     ];
 }

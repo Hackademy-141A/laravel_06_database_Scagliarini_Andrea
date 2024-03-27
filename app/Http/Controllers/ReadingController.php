@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\ReadingRequest;
 use app\Models\Reading;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class ReadingController extends Controller
         return view('reading.create');
     }
 
-    public function store(Request $request){
+    public function store(ReadingRequest $request){
         //$reading = new Reading();
         //? andiamo ad utilizzare i magicmethod 
         //$reading->bookName = $request->bookName;
@@ -31,6 +33,7 @@ class ReadingController extends Controller
             'autor' => $request->autor,
             'editor' => $request->editor,
             'year' => $request->year,
+            'img' => $request->file('img')->store('public/img')
         ]);
 
         return redirect(route('homepage'))->with('message', 'titolo inserito con successo');
