@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AlbumController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index','show');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -45,7 +49,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return view('album.show', compact('album'));
     }
 
     /**
